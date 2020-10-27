@@ -46,7 +46,7 @@ public class StudentControllerTest {
 
         mockMvc.perform(post("/students").contentType(MediaType.APPLICATION_JSON).content(json))
                 .andExpect(status().isCreated());
-        assertEquals(5, studentData.findAll().size());
+        assertEquals(13, studentData.findAll().size());
     }
 
     @Test

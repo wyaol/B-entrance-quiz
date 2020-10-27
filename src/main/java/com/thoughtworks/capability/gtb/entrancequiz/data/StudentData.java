@@ -18,7 +18,8 @@ public class StudentData {
     }
 
     private void init() {
-        String[] studentNames = {"大乔", "派克", "剑圣", "皇子"};
+        String[] studentNames = {"大乔", "派克", "剑圣", "皇子", "大乔", "派克",
+                "剑圣", "皇子", "大乔", "派克", "剑圣", "皇子"};
         Arrays.stream(studentNames).forEach(studentName -> this.insert(new Student(studentName)));
     }
 
@@ -31,7 +32,15 @@ public class StudentData {
     }
 
     public List<Student> findAll() {
-        return students;
+        List<Student> resStudents = new ArrayList<>();
+        students.forEach(student -> {
+            try {
+                resStudents.add(student.clone());
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+        });
+        return resStudents;
     }
 }
 
