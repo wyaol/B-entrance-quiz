@@ -32,11 +32,10 @@ public class StudentControllerTest {
     MockMvc mockMvc;
 
     private StudentData studentData = StudentData.getInstance();
-    private String[] studentNames = {"大乔", "派克", "剑圣", "皇子"};
 
     @BeforeEach
     void start() {
-        Arrays.stream(studentNames).forEach(studentName -> studentData.insert(new Student(studentName)));
+
     }
 
     @Test
@@ -47,13 +46,13 @@ public class StudentControllerTest {
 
         mockMvc.perform(post("/students").contentType(MediaType.APPLICATION_JSON).content(json))
                 .andExpect(status().isCreated());
-        assertEquals(studentData.findAll().size(), studentNames.length + 1);
+        assertEquals(5, studentData.findAll().size());
     }
 
     @Test
     void should_list_students() throws Exception {
         mockMvc.perform(get("/students"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(studentNames.length)));
+                .andExpect(jsonPath("$", hasSize(studentData.findAll().size())));
     }
 }
