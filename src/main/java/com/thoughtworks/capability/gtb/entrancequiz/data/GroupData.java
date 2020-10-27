@@ -18,6 +18,7 @@ public class GroupData {
     public static GroupData getInstance() {
         if (instance == null) {
             instance = new GroupData();
+            instance.setGroups(new ArrayList<>());
         }
         return instance;
     }
