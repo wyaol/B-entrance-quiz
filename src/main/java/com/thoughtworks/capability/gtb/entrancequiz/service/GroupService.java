@@ -15,7 +15,7 @@ public class GroupService {
     private GroupData groupData = GroupData.getInstance();
     private StudentData studentData = StudentData.getInstance();
 
-    public List<Group> group() {
+    public void group() {
         groupData.reset();
         List<Student> students = studentData.findAll();
         int index = 0;
@@ -28,7 +28,6 @@ public class GroupService {
             index ++;
             if (index == 6) index = 0;
         }
-        return groupData.getGroups();
     }
 
     public List<Group> getGroups() {
