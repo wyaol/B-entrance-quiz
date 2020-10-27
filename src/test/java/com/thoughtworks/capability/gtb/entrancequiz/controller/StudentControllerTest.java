@@ -30,7 +30,7 @@ public class StudentControllerTest {
     @Autowired
     MockMvc mockMvc;
 
-    private StudentData studentData = new StudentData();
+    private StudentData studentData = StudentData.getInstance();
     private String[] studentNames = {"大乔", "派克", "剑圣", "皇子"};
 
     @BeforeEach

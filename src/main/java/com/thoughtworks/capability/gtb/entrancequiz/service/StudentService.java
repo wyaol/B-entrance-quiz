@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class StudentService {
 
-    private StudentData studentData = new StudentData();
+    private StudentData studentData = StudentData.getInstance();
 
     private StudentDTO studentToStudentDTO(Student student) {
         return new StudentDTO(student.getId(), student.getName());

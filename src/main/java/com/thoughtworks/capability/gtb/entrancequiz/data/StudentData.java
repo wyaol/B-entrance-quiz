@@ -1,14 +1,23 @@
 package com.thoughtworks.capability.gtb.entrancequiz.data;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentData {
+
+    private static StudentData instance;
     private List<Student> students = new ArrayList<>();
+
+    public static StudentData getInstance() {
+        if (instance == null) {
+            instance = new StudentData();
+        }
+        return instance;
+    }
+
+    private Object readResolve() {
+        return instance;
+    }
 
     public void insert(Student student) {
         students.add(student);
