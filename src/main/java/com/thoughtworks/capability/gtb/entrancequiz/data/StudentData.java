@@ -19,10 +19,3 @@ public class StudentData {
     }
 }
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-class Student {
-    private Integer id;
-    private String name;
-}
