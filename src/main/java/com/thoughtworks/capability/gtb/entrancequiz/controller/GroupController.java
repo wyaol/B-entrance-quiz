@@ -22,7 +22,7 @@ public class GroupController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public List<Group> getGroups() {
         return groupService.getGroups();
     }
