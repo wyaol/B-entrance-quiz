@@ -6,6 +6,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+// TODO GTB-知识点: + 使用了CorsFilter
 @Configuration
 public class CorsConfig {
     private static String[] originsVal = new String[]{

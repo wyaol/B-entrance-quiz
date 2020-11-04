@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping("/students")
 public class StudentController {
 
+    // TODO GTB-知识点: - 建议使用构造方法注入bean
+    // TODO GTB-工程实践: - 建议private，遵循最小访问原则
     @Resource
     StudentService studentService;
 
@@ -21,6 +23,7 @@ public class StudentController {
         studentService.addStudent(studentDTO);
     }
 
+    // TODO GTB-知识点: - 状态码默认为200，可以省略@ResponseStatus注解
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<StudentDTO> getStudents() {

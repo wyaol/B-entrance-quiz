@@ -20,6 +20,7 @@ public class StudentData {
     private void init() {
         String[] studentNames = {"大乔", "派克", "剑圣", "皇子", "虚空之眼", "寒冰射手",
                 "赏金猎人", "德玛西亚", "狗熊", "蜘蛛", "人马", "光辉"};
+        // TODO GTB-知识点: + 使用了stream操作
         Arrays.stream(studentNames).forEach(studentName -> this.insert(new Student(studentName)));
     }
 
@@ -37,6 +38,7 @@ public class StudentData {
             try {
                 resStudents.add(student.clone());
             } catch (CloneNotSupportedException e) {
+                // TODO GTB-工程实践: - 异常处理避免直接打印堆栈
                 e.printStackTrace();
             }
         });
